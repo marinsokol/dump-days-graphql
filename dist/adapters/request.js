@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _regenerator = require('babel-runtime/regenerator');
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
 var _axios = require('axios');
 
 var _axios2 = _interopRequireDefault(_axios);
@@ -17,13 +21,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = function () {
   var get = function _callee(params) {
     var res;
-    return regeneratorRuntime.async(function _callee$(_context) {
+    return _regenerator2.default.async(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             _context.prev = 0;
             _context.next = 3;
-            return regeneratorRuntime.awrap((0, _axios2.default)({
+            return _regenerator2.default.awrap((0, _axios2.default)({
               url: _config2.default.API_URL,
               method: 'get',
               params: params
@@ -48,13 +52,13 @@ exports.default = function () {
 
   var post = function _callee2(data) {
     var res;
-    return regeneratorRuntime.async(function _callee2$(_context2) {
+    return _regenerator2.default.async(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.prev = 0;
             _context2.next = 3;
-            return regeneratorRuntime.awrap((0, _axios2.default)({
+            return _regenerator2.default.awrap((0, _axios2.default)({
               url: _config2.default.API_URL,
               method: 'post',
               data: data

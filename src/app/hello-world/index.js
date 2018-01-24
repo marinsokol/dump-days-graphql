@@ -1,20 +1,19 @@
 import { GraphQLString, GraphQLObjectType } from 'graphql'
 
-import firstTry from '../first-try'
-
 const helloWorld = {
   type: new GraphQLObjectType({
-    name: 'dimesions',
+    name: 'helloWorld',
     fields: () => ({
-      first: firstTry,
+      args: { type: GraphQLString },
       message: { type: GraphQLString }
     })
   }),
   args: {
     name: { type: GraphQLString }
   },
-  resolve: (parentValue, args) => ({
-    message: `hello world, ${args.name}`
+  resolve: async (parentValue, args) => ({
+    message: `hello world, ${args.name}`,
+    args: args.name
   })
 }
 

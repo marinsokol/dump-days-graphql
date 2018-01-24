@@ -4,20 +4,20 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _regenerator = require('babel-runtime/regenerator');
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
 var _graphql = require('graphql');
-
-var _firstTry = require('../first-try');
-
-var _firstTry2 = _interopRequireDefault(_firstTry);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var helloWorld = {
   type: new _graphql.GraphQLObjectType({
-    name: 'dimesions',
+    name: 'helloWorld',
     fields: function fields() {
       return {
-        first: _firstTry2.default,
+        args: { type: _graphql.GraphQLString },
         message: { type: _graphql.GraphQLString }
       };
     }
@@ -26,9 +26,21 @@ var helloWorld = {
     name: { type: _graphql.GraphQLString }
   },
   resolve: function resolve(parentValue, args) {
-    return {
-      message: 'hello world, ' + args.name
-    };
+    return _regenerator2.default.async(function resolve$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            return _context.abrupt('return', {
+              message: 'hello world, ' + args.name,
+              args: args.name
+            });
+
+          case 1:
+          case 'end':
+            return _context.stop();
+        }
+      }
+    }, null, undefined);
   }
 };
 
