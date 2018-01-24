@@ -1,14 +1,19 @@
 import express from 'express'
 import graphqlHTTP from 'express-graphql'
 
-import schema from './schema'
+import schema from './app/schema'
+import request from './adapters/request'
+import config from './config'
 
 const app = express()
 
 app.use('/', graphqlHTTP({
   schema,
+  context: {
+    request: request()
+  },
   graphiql: true
 }))
 
-app.listen(3000, () => console.log('Now browse to localhost:3000/')) // eslint-disable-line
+app.listen(config.PORT, () => console.log(`Now browse to localhost:${config.PORT}/`)) // eslint-disable-line
 
