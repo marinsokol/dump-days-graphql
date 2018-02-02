@@ -4,6 +4,10 @@
         "import"
     ],
     "rules": {
+        "max-len": [
+            "warn",
+            160
+        ],
         "semi": [
             "error",
             "never"

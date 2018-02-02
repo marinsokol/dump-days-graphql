@@ -1,12 +1,14 @@
 import { GraphQLObjectType, GraphQLSchema } from 'graphql'
 
 import helloWorld from './hello-world'
+import pokemons from './pokemons'
 
 const rootQuery =
   new GraphQLObjectType({
     name: 'rootQuery',
     fields: () => ({
-      helloWorld
+      helloWorld,
+      pokemons
     })
   })
 
